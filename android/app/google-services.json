@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "49266911563",
+    "project_id": "reserve-se",
+    "storage_bucket": "reserve-se.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49266911563:android:c60dfc94406f124e4560ce",
+        "android_client_info": {
+          "package_name": "com.example.reservese"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtNuFOgIxvjm984tvXeZA59HqQNkxGKQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

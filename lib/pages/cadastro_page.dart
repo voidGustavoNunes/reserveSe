@@ -1,7 +1,8 @@
-import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
-import 'package:br_validators/br_validators.dart';
+import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/services.dart';
+
+import '../controle/controle_tela_cadastro.dart';
 
 class CadastroPage extends StatefulWidget {
   @override
@@ -9,13 +10,7 @@ class CadastroPage extends StatefulWidget {
 }
 
 class _CadastroPageState extends State<CadastroPage> {
-  final _formKey = GlobalKey<FormState>();
-  final TextEditingController _nomeController = TextEditingController();
-  final TextEditingController _dataNascimentoController = TextEditingController();
-  final TextEditingController _senhaController = TextEditingController();
-  final TextEditingController _confirmaSenhaController = TextEditingController();
-  final TextEditingController _cpfController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
+  final ControleTelaCadastro _controle = ControleTelaCadastro(); // Instancia o controlador
 
   @override
   Widget build(BuildContext context) {
@@ -26,104 +21,60 @@ class _CadastroPageState extends State<CadastroPage> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
-          key: _formKey,
+          key: _controle.formKey, // Usa o formKey do controlador
           child: Column(
             children: [
               TextFormField(
-                controller: _nomeController,
+                controller: _controle.nomeController,
                 decoration: const InputDecoration(labelText: 'Nome'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira seu nome';
-                  }
-                  return null;
-                },
+                validator: _controle.validarNome, // Validação vinda do controlador
               ),
               const SizedBox(height: 16.0),
               TextFormField(
-                controller: _cpfController,
+                controller: _controle.cpfController,
                 decoration: const InputDecoration(labelText: 'CPF'),
                 keyboardType: TextInputType.number,
                 inputFormatters: [
-                  FilteringTextInputFormatter.digitsOnly, 
-                  CpfInputFormatter(), 
+                  FilteringTextInputFormatter.digitsOnly,
+                  CpfInputFormatter(),
                 ],
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira seu CPF';
-                  }
-                  bool isCpfValid = BRValidators.validateCPF(value);
-                  if (!isCpfValid) {
-                    return 'Por favor, insira um CPF válido';
-                  }
-                  return null;
-                },
+                validator: _controle.validarCPF,
               ),
               const SizedBox(height: 16.0),
               TextFormField(
-                controller: _dataNascimentoController,
+                controller: _controle.dataNascimentoController,
                 decoration: const InputDecoration(labelText: 'Data de Nascimento'),
                 keyboardType: TextInputType.datetime,
                 inputFormatters: [
                   FilteringTextInputFormatter.digitsOnly,
-                  DataInputFormatter(), 
+                  DataInputFormatter(),
                 ],
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira sua data de nascimento';
-                  }
-                  return null;
-                },
+                validator: _controle.validarDataNascimento,
               ),
               const SizedBox(height: 16.0),
               TextFormField(
-                controller: _emailController,
+                controller: _controle.emailController,
                 decoration: const InputDecoration(labelText: 'E-mail'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira seu e-mail';
-                  }
-                  return null;
-                },
+                validator: _controle.validarEmail,
               ),
               const SizedBox(height: 16.0),
               TextFormField(
-                controller: _senhaController,
+                controller: _controle.senhaController,
                 decoration: const InputDecoration(labelText: 'Senha'),
                 obscureText: true,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira sua senha';
-                  }
-                  if (value.length < 6) {
-                    return 'A senha deve ter pelo menos 6 caracteres';
-                  }
-                  return null;
-                },
+                validator: _controle.validarSenha,
               ),
               const SizedBox(height: 16.0),
               TextFormField(
-                controller: _confirmaSenhaController,
+                controller: _controle.confirmaSenhaController,
                 decoration: const InputDecoration(labelText: 'Confirme sua senha'),
                 obscureText: true,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira sua senha';
-                  }
-                  if (value != _senhaController.text) {
-                    return 'As senhas não correspondem';
-                  }
-                  return null;
-                },
+                validator: _controle.validarConfirmacaoSenha,
               ),
               const SizedBox(height: 24.0),
               ElevatedButton(
                 onPressed: () {
-                  if (_formKey.currentState?.validate() ?? false) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Cadastro realizado com sucesso')),
-                    );
-                  }
+                  _controle.cadastrar(context); // Ação de cadastro
                 },
                 child: const Text('Cadastrar'),
               ),
@@ -136,18 +87,7 @@ class _CadastroPageState extends State<CadastroPage> {
 
   @override
   void dispose() {
-    _nomeController.dispose();
-    _cpfController.dispose();
-    _dataNascimentoController.dispose();
-    _senhaController.dispose();
-    _confirmaSenhaController.dispose();
-    _emailController.dispose();
+    _controle.dispose(); // Libera os recursos no dispose
     super.dispose();
   }
-}
-
-void main() {
-  runApp(MaterialApp(
-    home: CadastroPage(),
-  ));
 }

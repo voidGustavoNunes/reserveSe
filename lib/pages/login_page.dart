@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:reservese/cadastro_page.dart';
-import 'package:reservese/login_restaurante_page.dart';
+import 'package:reservese/pages/cadastro_page.dart';
+import 'package:reservese/pages/login_restaurante_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -165,7 +165,7 @@ class LoginPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const LoginRestaurantePage(), // Página de Login de Restaurante
+                        builder: (context) => LoginRestaurantePage(), // Página de Login de Restaurante
                       ),
                     );
                   },

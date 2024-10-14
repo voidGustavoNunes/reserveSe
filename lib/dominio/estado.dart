@@ -1,0 +1,4 @@
+class Estado{
+  String? nome;
+
+}

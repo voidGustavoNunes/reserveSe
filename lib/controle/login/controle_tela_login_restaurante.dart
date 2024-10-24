@@ -3,11 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:email_validator/email_validator.dart';
 
-import '../dominio/usuario.dart';
-import '../dominio/usuario_restaurante.dart';
-import '../pages/tela_principal_restaurantes.dart';
-import '../util/nav.dart';
-import '../util/toast.dart';
+import '../../dominio/usuario.dart';
+import '../../dominio/usuario_restaurante.dart';
+import '../../pages/tela_principal/restaurante/tela_principal_restaurantes.dart';
+import '../../util/nav.dart';
+import '../../util/toast.dart';
 
 class ControleTelaLoginRestaurante {
   // Controles de edição do login e senha

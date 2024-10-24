@@ -2,7 +2,7 @@ import 'package:br_validators/validators/br_validators.dart';
 import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:reservese/controle/controle_tela_cadastro_restaurante.dart';
+import 'package:reservese/controle/cadastro/controle_tela_cadastro_restaurante.dart';
 
 class CadastroRestaurantePage extends StatelessWidget {
   final ControleTelaCadastroRestaurante controller = ControleTelaCadastroRestaurante();

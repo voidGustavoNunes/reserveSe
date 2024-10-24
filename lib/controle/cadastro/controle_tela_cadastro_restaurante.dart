@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:br_validators/br_validators.dart';
 import 'package:reservese/dominio/usuario_restaurante.dart';
 
-import '../pages/tela_principal_restaurantes.dart';
-import '../util/nav.dart';
+import '../../pages/tela_principal/restaurante/tela_principal_restaurantes.dart';
+import '../../util/nav.dart';
 
 class ControleTelaCadastroRestaurante {
   final _auth = FirebaseAuth.instance;

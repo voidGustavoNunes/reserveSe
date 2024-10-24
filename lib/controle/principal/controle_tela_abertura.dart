@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:reservese/pages/tela_principal_clientes.dart';
-import 'package:reservese/pages/tela_principal_restaurantes.dart';
-import '../dominio/usuario.dart';
-import '../dominio/usuario_restaurante.dart';
-import '../pages/login_page.dart';
+import 'package:reservese/pages/tela_principal/cliente/tela_principal_clientes.dart';
+import 'package:reservese/pages/tela_principal/restaurante/tela_principal_restaurantes.dart';
+import '../../dominio/usuario.dart';
+import '../../dominio/usuario_restaurante.dart';
+import '../../pages/login/login_page.dart';
 import 'package:flutter/material.dart';
-import '../util/nav.dart';
+import '../../util/nav.dart';
 
 class ControleTelaAbertura {
   void inicializarAplicacao(BuildContext context) {

@@ -3,10 +3,10 @@ import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:reservese/dominio/usuario.dart';
-import 'package:reservese/pages/tela_principal_clientes.dart';
+import 'package:reservese/pages/tela_principal/cliente/tela_principal_clientes.dart';
 
-import '../util/nav.dart';
-import '../util/toast.dart';
+import '../../util/nav.dart';
+import '../../util/toast.dart';
 
 class ControleTelaLogin{
   // Controles de edição do login e senha

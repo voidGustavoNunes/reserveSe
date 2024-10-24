@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:reservese/pages/abertura_page.dart';
-import 'package:reservese/pages/login_page.dart';
+import 'package:reservese/pages/tela_principal/abertura_page.dart';
+import 'package:reservese/pages/login/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 Future<void> main() async {

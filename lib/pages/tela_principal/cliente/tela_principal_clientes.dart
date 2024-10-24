@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:reservese/dominio/usuario_restaurante.dart';
 
-import '../../dominio/usuario.dart';
+import '../../../dominio/usuario.dart';
 
 
 class TelaPrincipalClientes extends StatefulWidget {

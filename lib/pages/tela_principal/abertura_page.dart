@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../controle/controle_tela_abertura.dart';
+import '../../controle/principal/controle_tela_abertura.dart';
 
 class TelaAbertura extends StatefulWidget {
   @override

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/services.dart';
 
-import '../controle/controle_tela_cadastro.dart';
+import '../../controle/cadastro/controle_tela_cadastro.dart';
 
 class CadastroPage extends StatefulWidget {
   @override

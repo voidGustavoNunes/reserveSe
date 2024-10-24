@@ -4,9 +4,9 @@ import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:reservese/dominio/usuario.dart';
-import 'package:reservese/pages/tela_principal_clientes.dart';
+import 'package:reservese/pages/tela_principal/cliente/tela_principal_clientes.dart';
 
-import '../util/nav.dart';
+import '../../util/nav.dart';
 
 class ControleTelaCadastro {
   final _auth = FirebaseAuth.instance;

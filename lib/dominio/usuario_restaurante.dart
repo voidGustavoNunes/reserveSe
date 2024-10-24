@@ -17,7 +17,7 @@ class UsuarioRestaurante{
 
   @override
   String toString() {
-    return 'Restaurante{id: $id, email: $email}';
+    return 'Restaurante{id: $id, email: $email, nome: $nome, cnpj: $cnpj}';
   }
 
   UsuarioRestaurante.fromMap(Map<String, dynamic> map) {

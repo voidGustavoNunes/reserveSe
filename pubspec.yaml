@@ -43,6 +43,9 @@ dependencies:
   ftoast: ^2.0.0
   cloud_firestore: ^5.4.4
   flutter_launcher_icons: ^0.14.1
+  shared_preferences: ^2.3.3
+  flutter_expandable_fab: ^2.3.0
+  floating_action_bubble_custom: ^1.0.0+2
 
 dev_dependencies:
   flutter_test:

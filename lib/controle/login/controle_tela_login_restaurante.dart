@@ -60,7 +60,12 @@ class ControleTelaLoginRestaurante {
         final Map<String, dynamic> userData = data.docs[0].data();
         UsuarioRestaurante restaurante = UsuarioRestaurante.fromMap(userData);
         restaurante.id = data.docs[0].id;
-        push(context, TelaPrincipalRestaurantes(restaurante), replace: true);
+        restaurante.salvar();
+        push(
+            context,
+            TelaPrincipalRestaurantes(restaurante: restaurante),  // Passa o parâmetro
+            replace: true
+        );
       }
     });
   }

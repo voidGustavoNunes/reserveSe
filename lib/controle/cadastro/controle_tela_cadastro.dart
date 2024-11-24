@@ -46,8 +46,9 @@ class ControleTelaCadastro {
             'senha': senhaController.text,
           }).then((value) {
           ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Cadastro realizado com sucesso')),
-          );
+          const SnackBar(content: Text('Cadastro realizado com sucesso')));
+          String documentId = value.id;
+          print("ID do documento gerado: $documentId");
           push(context, TelaPrincipalClientes(userCredential.user as Usuario), replace: true);
           }).catchError((error) {
             ScaffoldMessenger.of(context).showSnackBar(

@@ -57,8 +57,10 @@ class ControleTelaLogin{
     _collection_usuarios.where("email", isEqualTo: user?.email).snapshots().listen((data) {
       if (data.docs.isNotEmpty) {
         final Map<String, dynamic> userData = data.docs[0].data();
+
         Usuario cliente = Usuario.fromMap(userData);
         cliente.id = data.docs[0].id;
+        cliente.salvar();
         push(context, TelaPrincipalClientes(cliente), replace: true);
       }
     });

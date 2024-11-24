@@ -59,7 +59,11 @@ class ControleTelaCadastroRestaurante {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(content: Text('Cadastro realizado com sucesso')),
             );
-            push(context, TelaPrincipalRestaurantes(userCredential.user as UsuarioRestaurante), replace: true);
+            push(
+              context,
+              TelaPrincipalRestaurantes(restaurante: userCredential.user as UsuarioRestaurante),
+              replace: true,
+            );
           }).catchError((error) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text('Erro ao cadastrar: $error')),
